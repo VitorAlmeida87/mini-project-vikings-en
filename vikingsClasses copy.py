@@ -1,4 +1,5 @@
 import random
+
 # Soldier
 
 
@@ -52,7 +53,8 @@ class Saxon(Soldier):
     ## We define saxon's constructor, saxons has no names
     
     def __init__(self, health, strength):
-        super().__init__(health, strength)
+        self.health = health
+        self.strength = strength
         
     ## We define saxon's properties
     
@@ -88,15 +90,6 @@ class War():
     def vikingAttack(self):
         viking = random.choice(self.vikingArmy)
         saxon = random.choice(self.saxonArmy)
-<<<<<<< HEAD
-
-        result1 = saxon.receiveDamage(viking.strength)
-
-        if saxon.health <= 0:
-            self.saxonArmy.remove(saxon)
-
-        return result1
-=======
         
         result = saxon.receiveDamage(viking.strength)
         
@@ -104,22 +97,12 @@ class War():
             self.saxonArmy.remove(saxon)
         
         return result
->>>>>>> 3dc0a029dc7acc36712875644abc88899d8f2e32
         
     ## We return viking's missing health fromn the saxon's attack
     
     def saxonAttack(self):
         viking = random.choice(self.vikingArmy)
         saxon = random.choice(self.saxonArmy)
-<<<<<<< HEAD
-
-        result2 = viking.receiveDamage(saxon.strength)
-
-        if viking.health <= 0:
-            self.vikingArmy.remove(viking)
-
-        return result2
-=======
         
         result = viking.receiveDamage(saxon.strength)
         
@@ -127,7 +110,6 @@ class War():
             self.vikingArmy.remove(viking)
         
         return result
->>>>>>> 3dc0a029dc7acc36712875644abc88899d8f2e32
     
 
     def showStatus(self):
